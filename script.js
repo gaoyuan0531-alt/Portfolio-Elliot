@@ -92,15 +92,29 @@ document.querySelectorAll('.project-card').forEach((card) => {
   });
 });
 
+// Stride slide captions
+const strideCaptions = [
+  'Onboarding &amp; Authentication — a clean entry flow with splash screen, goal-setting intro, and login / sign-up screens using Google, Apple, and Facebook SSO.',
+  'Routines — the core habit-tracking feature. Users create daily habits, log incremental progress, and see their current streaks at a glance.',
+  'Calendar — week and month views that unify personal events and active routines in one unified schedule.',
+  'Social &amp; Profile — a community feed where users share milestones and import each other\'s routines, adding real social accountability to habit-building.',
+];
+
 document.querySelectorAll('.lightbox').forEach((lb) => {
   lb.querySelector('.lightbox-close').addEventListener('click', () => lb.classList.remove('open'));
   lb.querySelector('.lightbox-backdrop').addEventListener('click', () => lb.classList.remove('open'));
 
-  lb.querySelectorAll('.thumb').forEach((thumb) => {
+  const thumbs = lb.querySelectorAll('.thumb');
+  const caption = lb.querySelector('.lightbox-slide-caption');
+
+  thumbs.forEach((thumb, i) => {
     thumb.addEventListener('click', () => {
-      lb.querySelectorAll('.thumb').forEach((t) => t.classList.remove('active'));
+      thumbs.forEach((t) => t.classList.remove('active'));
       thumb.classList.add('active');
       lb.querySelector('.lightbox-main-img img').src = thumb.src;
+      if (caption && lb.id === 'lightbox-stride') {
+        caption.innerHTML = strideCaptions[i] || '';
+      }
     });
   });
 });

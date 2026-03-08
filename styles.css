@@ -570,6 +570,14 @@ nav ul a:hover {
   border-color: var(--text);
 }
 
+.lightbox-slide-caption {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+  min-height: 2.5em;
+}
+
 .lightbox-label {
   font-size: 0.7rem;
   font-weight: 600;
