@@ -3,35 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Gaoyuan Lou</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- Navigation -->
   <nav>
-    <span class="nav-logo">Your Name</span>
+    <span class="nav-logo">Gaoyuan Lou</span>
     <ul>
-      <li><a href="#photography">Photography</a></li>
-      <li><a href="#paintings">Paintings</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about"    data-zh="关于">About</a></li>
+      <li><a href="#photography" data-zh="摄影">Photography</a></li>
+      <li><a href="#paintings"   data-zh="绘画">Paintings</a></li>
+      <li><a href="#ui-works"    data-zh="UI 设计">UI Design</a></li>
+      <li><a href="#contact"     data-zh="联系">Contact</a></li>
     </ul>
+    <button class="lang-toggle" id="langToggle">中文</button>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <h1>Design. Art. Story.</h1>
-    <p class="hero-sub">UI Designer &amp; Artist — creating with intention.</p>
-    <a href="#photography" class="btn">See my work</a>
+    <h1 data-zh="设计。艺术。故事。">Design. Art. Story.</h1>
+    <p class="hero-sub" data-zh="UI 设计师 &amp; 艺术家 — 用心创作。">UI Designer &amp; Artist — creating with intention.</p>
+    <a href="#about" class="btn" data-zh="了解我">About me</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="section-inner two-col">
+      <div class="section-label" data-zh="关于">About</div>
+      <div class="section-content">
+        <h2 data-zh="你好，我是楼高原。">Hello, I'm Gaoyuan.</h2>
+        <p data-zh="UI 设计师与艺术家，目前居于杭州。本科就读于浙江大学英语语言文学专业，后赴密歇根大学攻读教育学硕士，方向为教育技术与设计，专注于交互设计与用户体验。">
+          UI designer and artist based in Hangzhou. I studied English Literature at Zhejiang University, then earned a Master's in Educational Studies at the University of Michigan — with a focus on interaction design and UX.
+        </p>
+        <p data-zh="我的工作游走于功能与情感之间。无论是一款日历应用，还是画布上的一笔，我都在意每一个细节，以及体验背后的那个人。">
+          My work sits at the intersection of function and feeling. Whether it's a calendar app or a brushstroke on canvas, I care deeply about craft, detail, and the people on the other side of the experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section section-alt">
+    <div class="section-inner two-col">
+      <div class="section-label" data-zh="教育经历">Education</div>
+      <div class="section-content">
+        <div class="exp-item">
+          <span class="exp-date">2024 — 2025</span>
+          <div>
+            <h3 data-zh="密歇根大学">University of Michigan</h3>
+            <span class="exp-company" data-zh="教育学硕士 · 教育技术与设计">Master of Arts in Educational Studies</span>
+            <p data-zh="主修：学习理论、课程设计、交互设计基础、用户体验设计基础、儿童教育中的 AI 应用">Foundations of Interaction Design, Foundations of UX Design, Curriculum Design, Learning Theory, AI Applications in Children's Education.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2020 — 2024</span>
+          <div>
+            <h3 data-zh="浙江大学">Zhejiang University</h3>
+            <span class="exp-company" data-zh="本科 · 英语语言文学">Bachelor of English Literature</span>
+            <p data-zh="主修：高级英汉互译、语义学、当代语言学。托福 111 / 英语专业八级。">Advanced Chinese-English Translation, Semantics, Contemporary Linguistics. TOEFL 111 / TEM-8.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="section-inner two-col">
+      <div class="section-label" data-zh="工作经历">Experience</div>
+      <div class="section-content">
+        <div class="exp-item">
+          <span class="exp-date">2025.01 — 2025.06</span>
+          <div>
+            <h3 data-zh="项目管理专员 / 助理">Project Management Specialist / Assistant</h3>
+            <span class="exp-company" data-zh="密歇根大学学术创新中心">University of Michigan, Academic Innovation Center</span>
+            <p data-zh="统筹线上课程设计全生命周期，探索并引入生成式 AI 工具辅助内容生产与会议流程。搭建无障碍文档体系，推动跨职能团队高效协作。">Managed full lifecycle of online course design projects. Introduced generative AI tools to assist with content production and meeting workflows. Maintained accessible documentation and coordinated cross-functional collaboration.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2021.05 — 2024.06</span>
+          <div>
+            <h3 data-zh="教师">Teacher</h3>
+            <span class="exp-company" data-zh="孔梭学院">Consseau Institute</span>
+            <p data-zh="持续三年每周教授初中英语议会制辩论选修课，指导 100+ 学生提升英语能力与批判性思维。根据学生特点设计沉浸式辩论课程，模拟赛场环境，让学生同时担任评委与选手角色。">Taught weekly parliamentary debate elective in English to middle school students for three years. Designed curriculum and created immersive debate experiences, guiding 100+ students in English proficiency and critical thinking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Photography -->
-  <section id="photography" class="section">
+  <section id="photography" class="section section-alt">
     <div class="section-inner">
-      <div class="section-label">Photography</div>
-      <h2 class="gallery-title">Through the Lens</h2>
+      <div class="section-label" data-zh="摄影">Photography</div>
+      <h2 class="gallery-title" data-zh="镜头里的世界">Through the Lens</h2>
       <div class="grid grid-photography">
         <div class="card">
           <img class="card-img" src="images/photography/mavis-1902.jpg" alt="Photography 1" />
@@ -50,10 +117,10 @@
   </section>
 
   <!-- Paintings -->
-  <section id="paintings" class="section section-alt">
+  <section id="paintings" class="section">
     <div class="section-inner">
-      <div class="section-label">Paintings</div>
-      <h2 class="gallery-title">Art &amp; Illustration</h2>
+      <div class="section-label" data-zh="绘画">Paintings</div>
+      <h2 class="gallery-title" data-zh="艺术与插画">Art &amp; Illustration</h2>
       <div class="grid grid-paintings">
         <div class="card card-painting">
           <img class="card-img" src="images/Paintings/IMG_8326.jpeg" alt="Painting 1" />
@@ -86,70 +153,110 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="section-inner two-col">
-      <div class="section-label">About</div>
-      <div class="section-content">
-        <h2>Hello, I'm [Your Name].</h2>
-        <p>
-          I'm a UI designer and artist based in [City]. I care deeply about
-          craft — whether that's a pixel-perfect interface or a brushstroke on
-          canvas. My work lives at the intersection of function and feeling.
-        </p>
-        <p>
-          When I'm not designing, you'll find me painting, exploring
-          architecture, or hunting for good coffee.
-        </p>
+  <!-- UI Design Works -->
+  <section id="ui-works" class="section">
+    <div class="section-inner">
+      <div class="section-label" data-zh="UI 设计">UI Design</div>
+      <h2 class="gallery-title" data-zh="精选作品">Selected Works</h2>
+      <div class="grid grid-ui">
+
+        <div class="card project-card" data-project="itask">
+          <img class="card-img" src="images/Cal main.png" alt="iTask Calendar App" />
+          <div class="card-info">
+            <h3>iTask</h3>
+            <p data-zh="日历应用 / AI 智能日程管理">Calendar app / AI-powered scheduling</p>
+          </div>
+        </div>
+
+        <div class="card project-card" data-project="stride">
+          <img class="card-img" src="images/stride-screens.png" alt="Stride App" />
+          <div class="card-info">
+            <h3>Stride</h3>
+            <p data-zh="习惯追踪应用 / 社交激励设计">Habit tracker / Social motivation design</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" class="section section-alt">
-    <div class="section-inner two-col">
-      <div class="section-label">Experience</div>
-      <div class="section-content">
-        <div class="exp-item">
-          <span class="exp-date">2023 — Present</span>
-          <div>
-            <h3>Senior UI Designer</h3>
-            <span class="exp-company">Company Name</span>
-            <p>Brief description of your role and impact. What did you build, lead, or improve?</p>
+  <!-- iTask Lightbox -->
+  <div class="lightbox" id="lightbox-itask" aria-modal="true" role="dialog">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-panel">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <div class="lightbox-content">
+        <div class="lightbox-gallery">
+          <div class="lightbox-main-img">
+            <img src="images/Cal main.png" alt="iTask main view" />
+          </div>
+          <div class="lightbox-thumbs">
+            <img src="images/Cal main.png" alt="Main view" class="thumb active" />
+            <img src="images/Cal card.png" alt="Event card" class="thumb" />
+            <img src="images/Cal.png" alt="Calendar view" class="thumb" />
           </div>
         </div>
-        <div class="exp-item">
-          <span class="exp-date">2021 — 2023</span>
-          <div>
-            <h3>UI / UX Designer</h3>
-            <span class="exp-company">Company Name</span>
-            <p>Brief description of your role and impact.</p>
-          </div>
-        </div>
-        <div class="exp-item">
-          <span class="exp-date">2019 — 2021</span>
-          <div>
-            <h3>Junior Designer</h3>
-            <span class="exp-company">Company Name</span>
-            <p>Brief description of your role and impact.</p>
-          </div>
+        <div class="lightbox-info">
+          <span class="lightbox-label" data-zh="UI 设计">UI Design</span>
+          <h2>iTask</h2>
+          <p class="lightbox-type" data-zh="网页端日历与任务管理应用">Web-based calendar &amp; task management app</p>
+          <p class="lightbox-desc" data-zh="一款极简风格的日程工具，将事件与待办事项整合于同一视图。用户通过自然语言输入需求，应用自动完成结构化处理。从用户调研到项目落地，基于 AI 辅助独立完成全流程开发。专为兼顾美感与效率的人而设计。">A minimal, artistic scheduling tool that blends events and to-dos in one view. Designed around flexibility — users describe what they need in natural language and the app structures it automatically. Built for people who care about aesthetics as much as function.</p>
+          <ul class="lightbox-tags">
+            <li data-zh="AI 自然语言输入">AI input parsing</li>
+            <li data-zh="温暖极简风格">Warm minimal aesthetic</li>
+            <li data-zh="事件与待办融合视图">Event + To-Do fusion view</li>
+            <li data-zh="高度可定制界面">Personalizable interface</li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Stride Lightbox -->
+  <div class="lightbox" id="lightbox-stride" aria-modal="true" role="dialog">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-panel">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <div class="lightbox-content">
+        <div class="lightbox-gallery">
+          <div class="lightbox-main-img">
+            <img src="images/stride-screens.png" alt="Stride screens" id="lightbox-stride-active-img" />
+          </div>
+          <div class="lightbox-thumbs">
+            <img src="images/stride-screens.png" alt="Hi-fi screens" class="thumb active" />
+            <img src="images/stride-splash.png" alt="Splash screen" class="thumb" />
+            <img src="images/stride-solutions.png" alt="Design solutions" class="thumb" />
+          </div>
+        </div>
+        <div class="lightbox-info">
+          <span class="lightbox-label" data-zh="UI 设计 · 课程项目">UI Design · Course Project</span>
+          <h2>Stride</h2>
+          <p class="lightbox-type" data-zh="移动端习惯追踪与社交激励应用">Mobile habit tracking &amp; social motivation app</p>
+          <p class="lightbox-desc" data-zh="Stride 是密歇根大学 SI 582 交互设计课程的团队项目。我们的核心问题是：如何帮助用户更好地定制任务管理方式，并持续保持积极性？Stride 将日历、习惯追踪与社交互动整合为一体，通过 AI 辅助输入、好友目标共享与进度可视化，让坚持变得更容易。">Stride is a team project from SI 582 Interaction Design at the University of Michigan. Our design question: how might we optimize the way users customize their task management and keep them motivated to maintain their routines? Stride merges calendar, habit tracking, and social accountability into one app — with AI-assisted input, friend goal sharing, and visual progress tracking.</p>
+          <ul class="lightbox-tags">
+            <li data-zh="AI 辅助输入">AI-assisted input</li>
+            <li data-zh="习惯追踪">Habit tracking</li>
+            <li data-zh="社交激励">Social motivation</li>
+            <li data-zh="Figma 高保真原型">Figma hi-fi prototype</li>
+            <li data-zh="团队协作设计">Team design project</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Contact -->
   <section id="contact" class="section contact-section">
     <div class="section-inner center">
-      <h2>Let's talk.</h2>
-      <p>Open to design roles, freelance projects, and collaborations.</p>
-      <a href="mailto:you@example.com" class="btn">you@example.com</a>
+      <h2 data-zh="欢迎联系。">Let's talk.</h2>
+      <p data-zh="期待设计职位、自由项目或任何合作机会。">Open to design roles, freelance projects, and collaborations.</p>
+      <a href="mailto:gaoyuan0531@gmail.com" class="btn">gaoyuan0531@gmail.com</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <span>Your Name &copy; 2026</span>
+    <span>Gaoyuan Lou &copy; 2026</span>
     <div class="footer-links">
       <a href="#">Dribbble</a>
       <a href="#">LinkedIn</a>

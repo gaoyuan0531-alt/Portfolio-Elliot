@@ -1,3 +1,50 @@
+// Language toggle
+const langToggle = document.getElementById('langToggle');
+let isZh = false;
+
+langToggle.addEventListener('click', () => {
+  isZh = !isZh;
+  langToggle.textContent = isZh ? 'EN' : '中文';
+  document.documentElement.lang = isZh ? 'zh' : 'en';
+
+  document.querySelectorAll('[data-zh]').forEach((el) => {
+    if (isZh) {
+      el.dataset.en = el.innerHTML;
+      el.innerHTML = el.dataset.zh;
+    } else {
+      if (el.dataset.en) el.innerHTML = el.dataset.en;
+    }
+  });
+});
+
+// Lightbox
+document.querySelectorAll('.project-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    const id = card.dataset.project;
+    const lb = document.getElementById(`lightbox-${id}`);
+    if (lb) lb.classList.add('open');
+  });
+});
+
+document.querySelectorAll('.lightbox').forEach((lb) => {
+  lb.querySelector('.lightbox-close').addEventListener('click', () => lb.classList.remove('open'));
+  lb.querySelector('.lightbox-backdrop').addEventListener('click', () => lb.classList.remove('open'));
+
+  lb.querySelectorAll('.thumb').forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      lb.querySelectorAll('.thumb').forEach((t) => t.classList.remove('active'));
+      thumb.classList.add('active');
+      lb.querySelector('.lightbox-main-img img').src = thumb.src;
+    });
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.lightbox.open').forEach((lb) => lb.classList.remove('open'));
+  }
+});
+
 // Smooth active nav highlight on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('nav ul a');
