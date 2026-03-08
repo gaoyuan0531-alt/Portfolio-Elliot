@@ -17,6 +17,72 @@ langToggle.addEventListener('click', () => {
   });
 });
 
+// Photo album gallery
+(function () {
+  const gallery = document.getElementById('photo-gallery');
+  const galleryImg = document.getElementById('gallery-img');
+  const galleryTitle = document.getElementById('gallery-album-title');
+  const galleryCounter = document.getElementById('gallery-counter');
+  const galleryStrip = document.getElementById('gallery-strip');
+  let current = 0;
+  let photos = [];
+
+  function openAlbum(key) {
+    const album = window.albums[key];
+    if (!album) return;
+    photos = album.photos;
+    const isZh = document.documentElement.lang === 'zh';
+    galleryTitle.textContent = isZh ? album.nameZh : album.name;
+
+    // Build strip
+    galleryStrip.innerHTML = '';
+    photos.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      img.addEventListener('click', () => goTo(i));
+      galleryStrip.appendChild(img);
+    });
+
+    goTo(0);
+    gallery.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function goTo(index) {
+    current = (index + photos.length) % photos.length;
+    galleryImg.src = photos[current];
+    galleryCounter.textContent = `${current + 1} / ${photos.length}`;
+    galleryStrip.querySelectorAll('img').forEach((img, i) => {
+      img.classList.toggle('active', i === current);
+    });
+    // Scroll strip to active thumb
+    const activeThumb = galleryStrip.children[current];
+    if (activeThumb) activeThumb.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
+  }
+
+  function closeGallery() {
+    gallery.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.album-card').forEach(card => {
+    card.addEventListener('click', () => openAlbum(card.dataset.album));
+  });
+
+  document.querySelector('.gallery-prev').addEventListener('click', () => goTo(current - 1));
+  document.querySelector('.gallery-next').addEventListener('click', () => goTo(current + 1));
+  document.querySelector('.gallery-close').addEventListener('click', closeGallery);
+  document.querySelector('.photo-gallery-backdrop').addEventListener('click', closeGallery);
+
+  document.addEventListener('keydown', (e) => {
+    if (!gallery.classList.contains('open')) return;
+    if (e.key === 'ArrowRight') goTo(current + 1);
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+    if (e.key === 'Escape') closeGallery();
+  });
+})();
+
 // Lightbox
 document.querySelectorAll('.project-card').forEach((card) => {
   card.addEventListener('click', () => {

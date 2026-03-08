@@ -99,22 +99,116 @@
     <div class="section-inner">
       <div class="section-label" data-zh="摄影">Photography</div>
       <h2 class="gallery-title" data-zh="镜头里的世界">Through the Lens</h2>
-      <div class="grid grid-photography">
-        <div class="card">
-          <img class="card-img" src="images/photography/mavis-1902.jpg" alt="Photography 1" />
+      <div class="grid grid-albums">
+
+        <div class="album-card" data-album="city">
+          <img class="card-img" src="images/photography/The CIty/3R8A7819.jpg" alt="The City" />
+          <div class="album-overlay"><span data-zh="城市">The City</span></div>
         </div>
-        <div class="card">
-          <img class="card-img" src="images/photography/3R8A7941.jpg" alt="Photography 2" />
+
+        <div class="album-card" data-album="turkey">
+          <img class="card-img" src="images/photography/Turkey/mavis-01280.jpg" alt="Turkey" />
+          <div class="album-overlay"><span>Turkey</span></div>
         </div>
-        <div class="card">
-          <img class="card-img" src="images/photography/3R8A7932.jpg" alt="Photography 3" />
+
+        <div class="album-card" data-album="landscape">
+          <img class="card-img" src="images/photography/当风景来到/Swiss-29.jpg" alt="当风景来到" />
+          <div class="album-overlay"><span data-zh="当风景来到">当风景来到</span></div>
         </div>
-        <div class="card">
-          <img class="card-img" src="images/photography/LA-113.jpg" alt="Photography 4" />
+
+        <div class="album-card" data-album="street">
+          <img class="card-img" src="images/photography/走在街上/mavis-1902.jpg" alt="走在街上" />
+          <div class="album-overlay"><span data-zh="走在街上">走在街上</span></div>
         </div>
+
       </div>
     </div>
   </section>
+
+  <!-- Photography Fullscreen Gallery -->
+  <div class="photo-gallery" id="photo-gallery">
+    <div class="photo-gallery-backdrop"></div>
+    <div class="photo-gallery-ui">
+      <button class="gallery-close" aria-label="Close">&times;</button>
+      <div class="gallery-album-title" id="gallery-album-title"></div>
+      <div class="gallery-main">
+        <button class="gallery-prev" aria-label="Previous">&#8592;</button>
+        <img class="gallery-img" id="gallery-img" src="" alt="" />
+        <button class="gallery-next" aria-label="Next">&#8594;</button>
+      </div>
+      <div class="gallery-counter" id="gallery-counter"></div>
+      <div class="gallery-strip" id="gallery-strip"></div>
+    </div>
+  </div>
+
+  <!-- Album data -->
+  <script>
+    window.albums = {
+      city: {
+        name: 'The City',
+        nameZh: '城市',
+        photos: [
+          'images/photography/The CIty/3R8A7819.jpg',
+          'images/photography/The CIty/3R8A7828.jpg',
+          'images/photography/The CIty/3R8A7836.jpg',
+          'images/photography/The CIty/3R8A7853.jpg',
+          'images/photography/The CIty/3R8A7886.jpg',
+          'images/photography/The CIty/3R8A7893.jpg',
+          'images/photography/The CIty/3R8A7907-2.jpg',
+          'images/photography/The CIty/3R8A7929.jpg',
+          'images/photography/The CIty/3R8A7931.jpg',
+          'images/photography/The CIty/3R8A7932.jpg',
+          'images/photography/The CIty/3R8A7935.jpg',
+          'images/photography/The CIty/3R8A7941.jpg',
+        ]
+      },
+      turkey: {
+        name: 'Turkey',
+        nameZh: 'Turkey',
+        photos: [
+          'images/photography/Turkey/mavis-01280.jpg',
+          'images/photography/Turkey/mavis-01307.jpg',
+          'images/photography/Turkey/mavis-01340.jpg',
+          'images/photography/Turkey/mavis-01442.jpg',
+          'images/photography/Turkey/mavis-01498.jpg',
+          'images/photography/Turkey/mavis-.jpg',
+          'images/photography/Turkey/mavis--2.jpg',
+        ]
+      },
+      landscape: {
+        name: '当风景来到',
+        nameZh: '当风景来到',
+        photos: [
+          'images/photography/当风景来到/Swiss-29.jpg',
+          'images/photography/当风景来到/Swiss-32.jpg',
+          'images/photography/当风景来到/LA-120.jpg',
+          'images/photography/当风景来到/LA-133.jpg',
+          'images/photography/当风景来到/Mavis-0213.jpg',
+          'images/photography/当风景来到/原尺寸-4518.jpg',
+          'images/photography/当风景来到/原尺寸-4524.jpg',
+          'images/photography/当风景来到/枫周图-0620.jpg',
+          'images/photography/当风景来到/胶片模拟-0468.jpg',
+          'images/photography/当风景来到/胶片模拟原图-0714.jpg',
+          'images/photography/当风景来到/鸭子-5350.jpg',
+          'images/photography/当风景来到/2022 annual picture-5414.jpg',
+        ]
+      },
+      street: {
+        name: '走在街上',
+        nameZh: '走在街上',
+        photos: [
+          'images/photography/走在街上/mavis-1902.jpg',
+          'images/photography/走在街上/3R8A8683-2.jpg',
+          'images/photography/走在街上/3R8A8712.jpg',
+          'images/photography/走在街上/Swiss-36.jpg',
+          'images/photography/走在街上/北教-0382.jpg',
+          'images/photography/走在街上/月亮 蓝-0591.jpg',
+          'images/photography/走在街上/枫-4140.jpg',
+          'images/photography/走在街上/窗户.jpg',
+        ]
+      }
+    };
+  </script>
 
   <!-- Paintings -->
   <section id="paintings" class="section">
